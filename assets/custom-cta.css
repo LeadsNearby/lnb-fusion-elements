@@ -1,0 +1,67 @@
+.lnbCustomCTA {
+	--background-color:#000;
+	--text-color:#fff;
+	--padding-top:20px;
+	--padding-bottom:20px;
+	--padding-right:20px;
+	--padding-left:20px;
+	--margin-top:20px;
+	--margin-bottom:20px;
+	--margin-right:20px;
+	--margin-left:20px;
+	background-color:#000;
+	color:#fff;
+	color:var(--text-color);
+	background-color:var(--background-color);
+	padding-top:var(--padding-top);
+	padding-bottom:var(--padding-bottom);
+	padding-right:var(--padding-right);
+	padding-left:var(--padding-left);
+	margin-top:var(--margin-top);
+	margin-bottom:var(--margin-bottom);
+	margin-right:var(--margin-right);
+	margin-left:var(--margin-left);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.lnbCustomCTA__textContainer {
+	width:50%;
+	padding:10px;
+}
+.lnbCustomCTA__text {
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.lnbCustomCTA__leftTextContainer {
+	text-align:center;
+}
+.lnbCustomCTA__leftTextContainer svg {
+	font-size: 30px;
+    margin-right: 10px;
+	vertical-align:middle;
+}
+.lnbCustomCTA__leftTextContainer .text {
+	vertical-align:middle;
+	font-size:2em;
+}
+.lnbCustomCTA__rightTextContainer {
+	border-left:1px solid;
+}
+.lnbCustomCTA__rightText {
+	font-size:20px;
+}
+
+/* Media Queries */
+@media screen and (max-width:800px) {
+	.lnbCustomCTA {
+		flex-direction:column;
+	}
+	.lnbCustomCTA__textContainer {
+		width:100%;
+	}
+	.lnbCustomCTA__rightTextContainer {
+		border-left:none;
+		text-align:center;
+	}
+}
