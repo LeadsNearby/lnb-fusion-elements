@@ -27,7 +27,36 @@ function custom_fusion_builder_element() {
 					'type'        => 'colorpickeralpha',
 					'heading'     => esc_attr__( 'Select Overlay Color', 'fusion-builder' ),
 					'param_name'  => 'overlay_color',
-					'value'       => 'rgba(78,117,116,.75)',
+					'default'     => 'rgba(0,0,0,.75)',
+					'value'       => 'rgba(0,0,0,.75)',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Button Color', 'fusion-builder' ),
+					'param_name'  => 'button_color',
+					'default'     => 'rgba(253, 164, 9, 0.75)',
+					'value'       => 'rgba(253, 164, 9, 0.75)',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Button Hover Color', 'fusion-builder' ),
+					'param_name'  => 'button_hover_color',
+					'default'     => '#fda409',
+					'value'       => '#fda409',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Button Text Color', 'fusion-builder' ),
+					'param_name'  => 'button_text_color',
+					'default'     => '#fff',
+					'value'       => '#fff',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Button Text Hover Color', 'fusion-builder' ),
+					'param_name'  => 'button_text_hover_color',
+					'default'     => '#000',
+					'value'       => '#000',
 				),
 				array(
 					'type'        => 'textfield',
@@ -60,14 +89,28 @@ function custom_fusion_builder_element() {
 					'heading'     => esc_attr__( 'CTA Title', 'fusion-builder' ),
 					// 'description' => esc_attr__( 'The alt attribute provides alternative information if an image cannot be viewed.', 'fusion-builder' ),
 					'param_name'  => 'cta_title',
-					'value'       => '',
+					'value'       => 'CTA TITLE',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Title Color', 'fusion-builder' ),
+					'param_name'  => 'title_color',
+					'default'     => '#fda409',
+					'value'       => '#fda409',
 				),
 				array(
 					'type'        => 'textarea',
 					'heading'     => esc_attr__( 'CTA Text', 'fusion-builder' ),
 					// 'description' => esc_attr__( 'The alt attribute provides alternative information if an image cannot be viewed.', 'fusion-builder' ),
 					'param_name'  => 'cta_text',
-					'value'       => '',
+					'value'       => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Text Color', 'fusion-builder' ),
+					'param_name'  => 'text_color',
+					'default'     => '#fff',
+					'value'       => '#fff',
 				),
 				array(
 					'type'        => 'textfield',
@@ -112,9 +155,9 @@ function custom_fusion_builder_element_shortcode( $atts = [], $content = null ) 
 	ob_start(); ?>
 	<div class="lnbImageFrame<?php if($atts['cta_position'] == 'right') echo ' lnbImageFrame--rightOverlay'; ?>" style="background-image:url('<?php echo $content; ?>');--margin-top:<?php echo $atts['margin_top']; ?>;--margin-bottom:<?php echo $atts['margin_bottom']; ?>;--margin-right:<?php echo $atts['margin_right']; ?>;--margin-left:<?php echo $atts['margin_left']; ?>;--overlay-color:<?php echo $atts['overlay_color']; ?>;">
 		<div class="lnbImageFrame__content">
-			<h3 class="lnbImageFrame__title"><?php echo $atts['cta_title']; ?></h3>
-			<p class="lnbImageFrame__text"><?php echo $atts['cta_text']; ?></p>
-			<a class="lnbImageFrame__button" href="<?php echo $atts['cta_button_link']; ?>"><span class="lnbImageFrame__buttonText"><?php echo $atts['cta_button_text']; ?></span></a>
+			<h3 class="lnbImageFrame__title" style="--title-color:<?php echo $atts['title_color']; ?>;"><?php echo $atts['cta_title']; ?></h3>
+			<p class="lnbImageFrame__text" style="--text-color:<?php echo $atts['text_color']; ?>;"><?php echo $atts['cta_text']; ?></p>
+			<a class="lnbImageFrame__button" href="<?php echo $atts['cta_button_link']; ?>" style="--button-color:<?php echo $atts['button_color']; ?>; --button-hover-color:<?php echo $atts['button_hover_color']; ?>;"><span class="lnbImageFrame__buttonText" style="--button-text-color:<?php echo $atts['button_text_color']; ?>; --button-text-hover-color:<?php echo $atts['button_text_hover_color']; ?>;"><?php echo $atts['cta_button_text']; ?></span></a>
 		</div>
 	</div>
 	<?php return ob_get_clean();
