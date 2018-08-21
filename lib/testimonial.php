@@ -48,10 +48,9 @@ function register_test_element_styles() {
 				array(
 
 				  'type'        => 'radio_button_set',
-				  'heading'     => esc_attr__( 'Select styles', 'fusion-builder' ),
-				  'description' => esc_attr__( 'Generate Button?', 'fusion-builder' ),
+				  'heading'     => esc_attr__( 'Generate Button?', 'fusion-builder' ),
+				  'description' => esc_attr__( 'Generate Button For Main Reviews Page', 'fusion-builder' ),
 				  'param_name'  => 'display_button',
-				  'default'     => 'yes',
 				  'value'       => array(
 				        'yes' => esc_attr__( 'Yes', 'fusion-builder' ),
 				        'no'  => esc_attr__( 'No', 'fusion-builder' ),
@@ -61,8 +60,8 @@ function register_test_element_styles() {
 				array(
 
   					'type'        => 'textfield',
-					'heading'     => esc_attr__( 'Name', 'fusion-builder' ),
-					'description' => esc_attr__( 'Button Text', 'fusion-builder' ),
+					'heading'     => esc_attr__( 'Button Text', 'fusion-builder' ),
+					'description' => esc_attr__( 'Text For Button', 'fusion-builder' ),
 					'param_name'  => 'button_text',
 					'value'       => 'Button Text',
 				),
@@ -78,7 +77,7 @@ function register_test_element_styles() {
 
   					'type'        => 'textfield',
 					'heading'     => esc_attr__( 'Button Width', 'fusion-builder' ),
-					'description' => esc_attr__( 'Button Width', 'fusion-builder' ),
+					'description' => esc_attr__( 'default 200px', 'fusion-builder' ),
 					'param_name'  => 'button_width',
 					'value'       => '200px',
 				),
@@ -92,7 +91,8 @@ function register_test_element_styles() {
 					'type'        => 'colorpickeralpha',
 					'heading'     => esc_attr__( 'Select Button Hover Color', 'fusion-builder' ),
 					'param_name'  => 'button_hover_color',
-					'value'       => '#000',
+					'value'       => '#fee300',
+					'default'     => '#fee300',
 				),
 				array(
 					'type'        => 'colorpickeralpha',
