@@ -1,0 +1,31 @@
+.lnbTestimonialsWidget__button {
+	display:block;
+	margin:0 auto;
+	display: block;
+    margin: 0 auto;
+    text-align: center;
+    --button-width:200px;
+     width:var(--button-width);
+    --padding-top:20px;
+    padding-top:var(--padding-top);
+   --padding-right:20px;
+    padding-right:var(--padding-right);
+    --padding-bottom:20px;
+    padding-bottom:var(--padding-bottom);
+    --padding-left:20px;
+    padding-left:var(--padding-left);
+    --button-color:#000;
+    background:var(--button-color);
+    --button-text-color:#fff;
+    color:var(--button-text-color);
+    --button-hover:#fee300;
+    --text-hover:#000;
+    --margin-top:20px;
+    margin-top:var(--margin-top);
+    --margin-bottom:20px;
+    margin-bottom:var(--margin-bottom);
+}
+.lnbTestimonialsWidget__button:hover {
+	background:var(--button-hover);
+	color:var(--text-hover);
+}
