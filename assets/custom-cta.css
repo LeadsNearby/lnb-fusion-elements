@@ -24,6 +24,13 @@
 	display:flex;
 	justify-content:center;
 	align-items:center;
+	border-top:solid 20px #FF0000;
+	border-bottom:solid 20px #FF0000;
+	--border-size:20px;
+	border-top: solid #FF0000 var(--border-size);
+	border-bottom: solid #FF0000 var(--border-size);
+	--border-color:#FF0000;
+	border-color:var(--border-color);
 }
 .lnbCustomCTA__textContainer {
 	width:50%;

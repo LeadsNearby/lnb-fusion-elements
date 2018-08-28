@@ -77,6 +77,19 @@ function custom_fusion_cta_element() {
 				   ),
 
 				),
+				array(
+					'type'        => 'textfield',
+					'heading'     => esc_attr__( 'Border Size', 'fusion-builder' ),
+					'description' => esc_attr__( 'Size of top and bottom border.', 'fusion-builder' ),
+					'param_name'  => 'border_size',
+					'value'       => '20px',
+				),
+				array(
+					'type'        => 'colorpickeralpha',
+					'heading'     => esc_attr__( 'Select Border Color', 'fusion-builder' ),
+					'param_name'  => 'border_color',
+					'value'       => '#FF0000',
+				),
 			),
 		)
 	);
@@ -88,7 +101,7 @@ function custom_fusion_cta_element_shortcode( $atts = [], $content = null ) {
  /* print_r ($atts['padding_top']); */
 	ob_start(); ?>
 	
-<div class="lnbCustomCTA" style="--background-color:<?php echo $atts['background_color']; ?>; --text-color:<?php echo $atts['text_color']; ?>;--padding-top:<?php echo $atts['padding_top']; ?>;--padding-bottom:<?php echo $atts['padding_bottom']; ?>;--padding-right:<?php echo $atts['padding_right']; ?>;--padding-left:<?php echo $atts['padding_left']; ?>;--margin-top:<?php echo $atts['margin_top']; ?>;--margin-bottom:<?php echo $atts['margin_bottom']; ?>;--margin-right:<?php echo $atts['margin_right']; ?>;--margin-left:<?php echo $atts['margin_left']; ?>;">
+<div class="lnbCustomCTA" style="--background-color:<?php echo $atts['background_color']; ?>; --text-color:<?php echo $atts['text_color']; ?>;--padding-top:<?php echo $atts['padding_top']; ?>;--padding-bottom:<?php echo $atts['padding_bottom']; ?>;--padding-right:<?php echo $atts['padding_right']; ?>;--padding-left:<?php echo $atts['padding_left']; ?>;--margin-top:<?php echo $atts['margin_top']; ?>;--margin-bottom:<?php echo $atts['margin_bottom']; ?>;--margin-right:<?php echo $atts['margin_right']; ?>;--margin-left:<?php echo $atts['margin_left']; ?>; --border-size:<?php echo $atts['border_size']; ?>; --border-color:<?php echo $atts['border_color']; ?>;">
 		<div class="lnbCustomCTA__leftTextContainer lnbCustomCTA__textContainer">
 			<div class="lnbCustomCTA__leftText lnbCustomCTA__text"><i class="fas fa-mobile-alt"></i><span class="text"><?php echo $atts['left_text']; ?></span></div>
 		</div>
