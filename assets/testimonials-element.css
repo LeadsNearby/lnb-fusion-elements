@@ -18,7 +18,7 @@
     background:var(--button-color);
     --button-text-color:#fff;
     color:var(--button-text-color);
-    --button-hover:#fee300;
+    --button-hover-color:#fee300;
     --text-hover:#000;
     --margin-top:20px;
     margin-top:var(--margin-top);
@@ -26,6 +26,6 @@
     margin-bottom:var(--margin-bottom);
 }
 .lnbTestimonialsWidget__button:hover {
-	background:var(--button-hover);
+	background:var(--button-hover-color);
 	color:var(--text-hover);
 }
