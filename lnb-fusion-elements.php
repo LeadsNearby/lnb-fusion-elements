@@ -2,7 +2,7 @@
 /*
 Plugin Name: LNB Fusion Elements
 Description: Includes custom fusion elements created by LeadsNearby Developers
-Version: 1.3
+Version: 1.4
 Author: Michael Layao
 */
 

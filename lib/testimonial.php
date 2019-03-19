@@ -59,6 +59,18 @@ function register_test_element_styles() {
 				),
 				array(
 
+				  'type'        => 'radio_button_set',
+				  'heading'     => esc_attr__( 'Show Review Body?', 'fusion-builder' ),
+				  'description' => esc_attr__( 'Show Review Body for Reviews', 'fusion-builder' ),
+				  'param_name'  => 'reviewbody',
+				  'value'       => array(
+				        'true' => esc_attr__( 'Yes', 'fusion-builder' ),
+				        'false'  => esc_attr__( 'No', 'fusion-builder' ),
+				   ),
+
+				),
+				array(
+
   					'type'        => 'textfield',
 					'heading'     => esc_attr__( 'Button Text', 'fusion-builder' ),
 					'description' => esc_attr__( 'Text For Button', 'fusion-builder' ),
@@ -143,13 +155,16 @@ function custom_testimonial_shortcode( $atts = [], $content = null ) {
 	wp_enqueue_style( 'test-element-styles' );
 	ob_start(); 
 	
-	  echo do_shortcode('[dyn-test-widget background='.$atts['stars_background_color'].' stars='.$atts['stars_color'].' reviewbg='.$atts['reviewbg'].' textbody='.$atts['textbody'].' authortext='.$atts['authortext'].']'); 
+	  echo do_shortcode('[dyn-test-widget background='.$atts['stars_background_color'].' stars='.$atts['stars_color'].' reviewbg='.$atts['reviewbg'].' textbody='.$atts['textbody'].' authortext='.$atts['authortext'].' reviewbody='.$atts['reviewbody'].' ]'); 
 
 	 if ($atts['display_button'] == 'yes') { ?>
 	 	<a class="lnbTestimonialsWidget__button" href="<?php echo $atts['url']; ?>" style="--button-width:<?php echo $atts['button_width']; ?>; --padding-top:<?php echo $atts['padding_top'];?>; --padding-right:<?php echo $atts['padding_right'];?>; --padding-bottom:<?php echo $atts['padding_bottom'];?>; --padding-left:<?php echo $atts['padding_left'];?>; --button-color:<?php echo $atts['button_color'];?>; --button-hover-color:<?php echo $atts['button_hover_color'];?>; --button-text-color:<?php echo $atts['button_text_color'];?>; --text-hover:<?php echo $atts['button_text_hover_color'];?>; --margin-top:<?php echo $atts['margin_top'];?>; --margin-bottom:<?php echo $atts['margin_bottom'];?>;"><?php echo $atts['button_text'];?></a>
 	 
 
 	<?php } 
+	
+	
+	
 
 	return ob_get_clean();
 }
