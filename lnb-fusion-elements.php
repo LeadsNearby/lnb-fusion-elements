@@ -2,8 +2,8 @@
 /*
 Plugin Name: LeadsNearby Fusion Elements
 Description: Includes custom fusion elements created by LeadsNearby Developers
-Version: 1.4.1
-Author: Michael Layao
+Version: 1.5.0
+Author: LeadsNearby
  */
 
 require_once plugin_dir_path(__FILE__) . '/lib/testimonial.php';
