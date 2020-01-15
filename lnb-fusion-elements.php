@@ -9,11 +9,12 @@ Author: LeadsNearby
 require_once plugin_dir_path(__FILE__) . '/lib/testimonial.php';
 require_once plugin_dir_path(__FILE__) . '/lib/custom-cta.php';
 require_once plugin_dir_path(__FILE__) . '/lib/custom-image-frame.php';
-require_once plugin_dir_path(__FILE__) . 'inc/updater/github-updater.php';
 
-if (is_admin()) {
-    new GitHubPluginUpdater(__FILE__, 'LeadsNearby', 'lnb-fusion-elements');
-}
+add_action('admin_init', function () {
+    if (class_exists('\lnb\core\GitHubPluginUpdater')) {
+        new \lnb\core\GitHubPluginUpdater(__FILE__, 'lnb-fusion-elements');
+    }
+}, 99);
 
 add_action('fusion_builder_before_init', function () {
     global $all_fusion_builder_elements;
