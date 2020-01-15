@@ -2,7 +2,7 @@
 /*
 Plugin Name: LeadsNearby Fusion Elements
 Description: Includes custom fusion elements created by LeadsNearby Developers
-Version: 1.5.0
+Version: 1.5.1
 Author: LeadsNearby
  */
 
@@ -49,7 +49,7 @@ add_filter('do_shortcode_tag', function ($raw_output, $tag, $attr) {
             'name' => $value,
             'acceptedAnswer' => array(
                 '@type' => 'Answer',
-                'text' => wp_strip_all_tags($content_matches[1][$i]),
+                'text' => strip_tags($content_matches[1][$i], '<h1><h2><h3><h4><br><ol><ul><li><a><p><div><b><strong><i><em>'),
             ),
         );
     }
