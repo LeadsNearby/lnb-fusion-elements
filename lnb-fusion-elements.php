@@ -2,7 +2,7 @@
 /*
 Plugin Name: LeadsNearby Fusion Elements
 Description: Includes custom fusion elements created by LeadsNearby Developers
-Version: 1.5.1
+Version: 1.5.2
 Author: LeadsNearby
  */
 
@@ -39,8 +39,12 @@ add_filter('do_shortcode_tag', function ($raw_output, $tag, $attr) {
     if ($tag != 'fusion_accordion') {
         return $raw_output;
     }
+    ['is_faq' => $is_faq] = $attr;
+    if ($is_faq !== 'yes') {
+        return $raw_output;
+    }
     $output = preg_replace("/[\n|\r]/", "", $raw_output);
-    preg_match_all('/fusion-toggle-heading">(.*?)<\/span/', $output, $title_matches);
+    preg_match_all('/fusion-toggle-heading">(.*?)<\//', $output, $title_matches);
     preg_match_all('/panel-body[a-z,\s,\-]+">(.*?)<\/div/', $output, $content_matches);
     $questions = array();
     foreach ($title_matches[1] as $i => $value) {
