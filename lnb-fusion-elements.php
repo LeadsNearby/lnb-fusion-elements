@@ -2,7 +2,7 @@
 /*
 Plugin Name: LeadsNearby Fusion Elements
 Description: Includes custom fusion elements created by LeadsNearby Developers
-Version: 1.5.2
+Version: 1.5.3
 Author: LeadsNearby
  */
 
