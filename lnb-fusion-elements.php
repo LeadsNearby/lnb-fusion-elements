@@ -39,7 +39,7 @@ add_filter('do_shortcode_tag', function ($raw_output, $tag, $attr) {
     if ($tag != 'fusion_accordion') {
         return $raw_output;
     }
-    ['is_faq' => $is_faq] = $attr;
+    $is_faq = $attr['is_faq'];
     if ($is_faq !== 'yes') {
         return $raw_output;
     }
