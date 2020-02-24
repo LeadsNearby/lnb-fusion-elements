@@ -57,11 +57,24 @@ add_filter('do_shortcode_tag', function ($raw_output, $tag, $attr) {
             ),
         );
     }
+    $current_questions = get_option('fusion_temp_faqs');
+    if (is_array($current_questions)) {
+        $new_questions = array_merge($current_questions, $questions);
+    } else {
+        $new_questions = $questions;
+    }
+    update_option('fusion_temp_faqs', $new_questions);
+    return $output;
+}, 11, 3);
+
+add_filter('wp_footer', function () {
+    $questions = get_option('fusion_temp_faqs');
+    update_option('fusion_temp_faqs', null);
     $json = array(
         '@context' => 'https://schema.org',
         '@type' => 'FAQPage',
         'mainEntity' => $questions,
     );
-    $output .= '<script type="application/ld+json">' . json_encode($json) . '</script>';
-    return $output;
-}, 11, 3);
+    $output = '<script type="application/ld+json">' . json_encode($json) . '</script>';
+    echo $output;
+}, 10);
