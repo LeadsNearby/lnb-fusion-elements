@@ -2,7 +2,7 @@
 /*
 Plugin Name: LeadsNearby Fusion Elements
 Description: Includes custom fusion elements created by LeadsNearby Developers
-Version: 1.5.3
+Version: 1.5.4
 Author: LeadsNearby
  */
 
@@ -69,6 +69,9 @@ add_filter('do_shortcode_tag', function ($raw_output, $tag, $attr) {
 
 add_filter('wp_footer', function () {
     $questions = get_option('fusion_temp_faqs');
+    if (empty($questions)) {
+        return;
+    }
     update_option('fusion_temp_faqs', null);
     $json = array(
         '@context' => 'https://schema.org',
