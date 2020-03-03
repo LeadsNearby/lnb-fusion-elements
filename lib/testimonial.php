@@ -11,9 +11,7 @@ function custom_testimonial_element() {
         array(
             'name' => esc_attr__('Custom Testimonials', 'fusion-builder'),
             'shortcode' => 'fusion_custom_testimonial',
-            'icon' => 'fusiona-image',
-            'preview' => FUSION_BUILDER_PLUGIN_DIR . 'inc/templates/previews/fusion-image-frame-preview.php',
-            'preview_id' => 'fusion-builder-block-module-image-frame-preview-template',
+            'icon' => 'fusiona-bubbles',
             'params' => array(
                 array(
                     'type' => 'colorpickeralpha',
